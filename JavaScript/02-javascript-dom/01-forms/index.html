@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/img/nippix-logo-01.PNG" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Booking | NippiX | DOM Challenges</title>
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <link rel="stylesheet" href="./assets/css/main.css">
+  </head>
+  <body class="bg-gray-700 font-Poppins">
+    <!-- Header Area -->
+    <header class="bg-gray-300 flex justify-between p-5 items-center">
+      <div class="w-[150px] h-[100px]">
+        <a href="https://web.facebook.com/nippixlk/" target="_blank">
+          <img
+          src="./assets/img/nippix-logo-01.PNG"
+          class="w-[140px]"
+          alt="Nippix"
+        />
+        </a>
+      </div>
+
+      <h2 class="text-4xl text-gray-700 font-Caveat"><span class="bg-red-500 p-2 rounded-md mr-3">📓🖊️</span> Event Booking</h2>
+
+      <a href="https://github.com/Mushkir/dom-form-challenge" target="_blank"><h2> <i class="fa-brands fa-github"></i> GitHub Repository </h2></a>
+    </header>
+    <!-- End -->
+
+    <main>
+      <div class="flex justify-center h-[670px]">
+        <!-- Form -->
+        <div
+          class="bg-gray-300 w-[500px] h-full mt-10 rounded-md ml-10 px-5 py-10"
+        >
+          <form class="w-full space-y-5" name="bookingsForm">
+            <!-- First Name -->
+            <p class="text-center" id="fillAlert"></p>
+            <div>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                class="w-full px-3 p-2 rounded-md outline-none"
+                placeholder="Enter your First Name"
+              />
+            </div>
+            <span class="text-[12px] opacity-0" id="nameError"
+              >Enter valid name</span
+            >
+
+            <!-- Last Name -->
+            <div>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                onkeyup="validateLastName()"
+                class="w-full px-3 py-2 rounded-md outline-none"
+                placeholder="Enter your Last Name"
+              />
+            </div>
+            <span class="text-[12px] opacity-0" id="lastNameError"
+              >Enter valid name</span
+            >
+
+            <!-- Contact Number -->
+            <div>
+              <input
+                type="text"
+                name="contactNumber"
+                id="contactNumber"
+                class="w-full px-3 py-2 rounded-md outline-none"
+                placeholder="Enter your Contact Number"
+              />
+            </div>
+            <span class="text-[12px] opacity-0" id="contactNumberError"
+              >Enter valid name</span
+            >
+
+            <!-- Email -->
+            <div>
+              <input
+                type="email"
+                name="userEmail"
+                id="userEmail"
+                class="w-full px-3 py-2 rounded-md outline-none"
+                placeholder="Enter your Email address"
+              />
+            </div>
+            <span class="text-[12px] opacity-0" id="emailAddError"
+              >Enter valid name</span
+            >
+
+            <!-- Type of Event -->
+            <div>
+              <select
+                name="typesOfEvent"
+                id="typesOfEvent"
+                class="w-full px-3 py-2 rounded-md outline-none text-gray-400"
+              >
+                <option value="">--Type of Event--</option>
+                <option value="wed">Wedding</option>
+                <option value="bday">Birthday</option>
+                <option value="meet">Meeting</option>
+                <option value="conf">Conference</option>
+              </select>
+            </div>
+            <span class="text-[12px] opacity-0" id="eventTypeError"
+              >Enter valid name</span
+            >
+
+            <!-- Date of Event -->
+            <div
+              class="flex justify-between bg-white px-3 py-2 rounded-md outline-none text-gray-400"
+            >
+              <label for="dateOfEvent">Date of Event</label>
+              <input
+                type="date"
+                name="dateOfEvent"
+                id="dateOfEvent"
+                class="outline-none"
+              />
+            </div>
+            <span class="text-[12px] opacity-0" id="eventDateError"
+              >Enter valid name</span
+            >
+
+            <div>
+              <button
+                class="w-full px-3 py-2 rounded-md outline-none bg-gray-700 text-gray-50 hover:bg-gray-900 hover:transition 500"
+                id="btnShow"
+              >
+                Show Details
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- End of Form Div -->
+
+        <!-- Output Div -->
+        <div
+          class="bg-gray-300 w-[500px] h-0 overflow-y-hidden hidden mt-10 rounded-md ml-10 px-5 py-10" id="outputDiv"
+        >
+          <!-- Greeting -->
+          <div class="bg-gray-400 rounded-md p-3 text-gray-50 mb-5">
+            <h3 class="text-center" id="userFullName"></h3>
+            <p class="text-center">
+              Thank you for choosing <span class="text-blue-950">Nip</span
+              ><span class="text-red-700">piX</span>. Please verify your
+              details...
+            </p>
+          </div>
+
+          <!-- First Name -->
+          <div class="flex bg-red-500 mb-5 rounded-md mt-10">
+            <label class="bg-white w-2/4 px-3 py-1 rounded-l-md"
+              >First Name</label
+            >
+            <label class="px-3 py-1" id="userFirstName"></label>
+          </div>
+
+          <!-- Last Name -->
+          <div class="flex bg-red-500 mb-5 rounded-md">
+            <label for="" class="bg-white w-2/4 px-3 py-1 rounded-l-md"
+              >Last Name</label
+            >
+            <label for="" class="px-3 py-1" id="userLastName"></label>
+          </div>
+
+          <!-- Contact Number -->
+          <div class="flex bg-red-500 mb-5 rounded-md">
+            <label for="" class="bg-white w-2/4 px-3 py-1 rounded-l-md"
+              >Contact Number</label
+            >
+            <label for="" class="px-3 py-1" id="userContactNumber"></label>
+          </div>
+
+          <!-- Email -->
+          <div class="flex bg-red-500 mb-5 rounded-md">
+            <label for="" class="bg-white w-2/4 px-3 py-1 rounded-l-md"
+              >Email</label
+            >
+            <label for="" class="px-3 py-1" id="userEmailAdd"></label>
+          </div>
+
+          <!-- Type of Event -->
+          <div class="flex bg-red-500 mb-5 rounded-md">
+            <label for="" class="bg-white w-2/4 px-3 py-1 rounded-l-md"
+              >Type of event</label
+            >
+            <label for="" class="px-3 py-1" id="eventType"></label>
+          </div>
+
+          <!-- Date of Event -->
+          <div class="flex bg-red-500 mb-5 rounded-md">
+            <label for="" class="bg-white w-2/4 px-3 py-1 rounded-l-md"
+              >Date of Event</label
+            >
+            <label for="" class="px-3 py-1" id="eventDate"></label>
+          </div>
+
+          <!-- Accept Button -->
+          <div class="mt-10">
+            <button id="buttonAccept"
+              class="w-full px-3 py-2 rounded-md outline-none bg-gray-700 text-gray-50 hover:bg-gray-900 hover:transition 500"
+            >
+              Accept and Verify
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>

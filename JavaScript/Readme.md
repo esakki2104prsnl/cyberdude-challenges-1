@@ -23,6 +23,3 @@ This internship is provided by [CyberDude Networks Pvt. Ltd.](https://youtube.co
 | s.no | Technologies Used                    |
 | :--- | ------------------------------------ |
 | 01   | [Javascript](./javascript)           |
-
-
-saniayne set aavu

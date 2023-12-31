@@ -1,4 +1,6 @@
-## Form Input with LocalStorage
+# Cyberdude Challenges - DOM (Document Object Model)
+
+## Task 02: Form Input with LocalStorage and Delete Operation
 
 User need to enter details and it need to store on LocalStorage and show the details in next page.
 
@@ -7,7 +9,16 @@ User need to enter details and it need to store on LocalStorage and show the det
 1. Get products data input from the user.
 2. Save that product data in the client browser.
 3. Display that product data in table form.
-4. Make CRUD operations functionality!
+4. Make Delete operations functionality!
+
+
+## Technologies and Libraries Used and Learned
+
+| s.no | Technologies and Libraries Used |
+| :--- | ------------------------------- |
+| 01   | [Javascript]                    |
+| 02   | [JustValidateDev]               |
+| 03   | [DayJs]                         |
 
 ### Screenshots
 
@@ -15,9 +26,9 @@ User need to enter details and it need to store on LocalStorage and show the det
 
 ### TODOs:
 
-- [ ] Form validation
-- [ ] Save it to LocalStorage (Storage Options)
-- [ ] Other CRUD Operations
+- [*] Form validation
+- [*] Save it to LocalStorage (Storage Options)
+- [*] Delete Operations
 
 ## Validation rules
 
@@ -26,15 +37,15 @@ User need to enter details and it need to store on LocalStorage and show the det
    - Native browser validation
    - External Javascript Libraries to validate your form.
 
-2. Server
 
-   - Code validation on server
+## Internship
 
-3. Database
+This internship is provided by [CyberDude Networks Pvt. Ltd.](https://youtube.com/cyberdudenetworks) as part of the 6-Month Free Internship program, a skill development initiative organized to enhance participants' skills. Mentoring was provided by [Mr. Anbuselvan Rocky](https://instagram.com/anbuselvanrocky). For more information, [you can contact CyberDude Networks here](https://cyberdudenetworks.com).
 
-   - Columns validation.
+
 
 ### License: MIT (Do whatever, you want!)
+
 
 ### Acknowledgment:
 
